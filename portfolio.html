@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      
+      box-sizing: border-box;
+    }
+
+    body {
+  background: linear-gradient(135deg, #b1d4e0, #e9f2f5);
+  font-family: Arial, sans-serif;
+}
+
+
+    nav {
+      background-color: #f2f2f2;
+      padding: 05x;
+    }
+
+    .portfolio-title {
+      font-weight: bold;
+      font-size: 18px;
+      margin-left: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      background-color: #b8c6db;
+background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
+      padding: 15px;
+      font-size: 25px;
+      text-align: right;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      padding: 5px;
+    }
+
+    nav ul li a:hover {
+      background-color: #333;
+      color: #fff;
+      padding: 12px;
+    }
+
+    .dropdown-content {
+      display: none;
+      justify-content: center;
+      position: absolute;
+      background-color: #f2f2f2;
+      min-width: 160px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      top: 100%; /* Updated */
+  left: 0; /* Updated */
+    }
+    .dropdown:hover .dropdown-content {
+  display: block;
+
+}
+.dropdown-content:hover {
+background-color: #85b4e4;
+}
+
+    .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+    .dropdown-content a {
+      color: #333;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    #home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  background-image: url('home-background.avif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0 20px;
+}
+
+
+
+    #home h1 {
+      font-size: 50px;
+      font-family: cursive;
+      margin-bottom: 200px;
+      margin-left: 100px;
+      text-align: left;
+    
+    }
+    /* #home h2 {
+      font: size 60px;
+      margin-bottom: 220px;
+      margin-left: 100px;
+      text-align: left;
+    
+    } */
+    #home p{
+      margin-left: 100px;
+      margin-top: -150px; 
+      font-size: 1.0em;
+      font-family: cursive;
+      margin-bottom: 200px;
+    }
+    
+
+    #home img {
+      width:480px;
+      border-radius: 50%;
+      height: 480px;
+      order: 2;
+      background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      margin-right: 50px;
+      /* margin-left: -20px; */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    main section {
+      display: none;
+      
+      padding: 20px;
+    }
+
+    #about {
+      background-color: #b2edcd;
+background-image: linear-gradient(45deg, #b2edcd 0%, #ebe864 100%);
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+}
+#about p{
+  font-size: 25px;
+  padding: 10px;
+  font-family: cursive;
+ 
+}
+#about h2{
+  padding: 10px;
+  margin-top: 25px;
+  margin-left: 15px;
+
+}
+#about h3{
+  padding: 10px;
+  
+}
+#about ul li{
+  padding: 15px;
+}
+#about button{
+  padding: 10px 20px;
+  margin-left: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 2.5px;
+
+}
+
+
+
+    #contact {
+      background-color: #fee2f8;
+background-image: linear-gradient(315deg, #fee2f8 0%, #dcf8ef 74%);
+
+  padding: 20px;
+}
+#contact p{
+  padding: 10px;
+  font-size: 20px;
+}
+
+#contact h2 {
+  font-size: 24px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+#contact form {
+  margin-top: 20px;
+}
+
+#contact .form-group {
+  margin-bottom: 15px;
+}
+
+#contact label {
+  display: block;
+  font-weight: bold;
+}
+
+#contact input[type="text"],
+#contact input[type="tel"],
+#contact input[type="email"],
+#contact textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#contact textarea {
+  height: 120px;
+}
+
+#contact button[type="submit"] {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#contact button[type="submit"]:hover {
+  background-color: #666;
+}
+#skills {
+  background-color: #e3b6a3;
+background-image: linear-gradient(62deg, #e3b6a3 0%, #f3ec70 100%);
+
+  padding: 20px;
+}
+
+#skills h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 25px;
+  justify-content: center;
+  list-style: none;
+  margin-top: 20px;
+}
+
+.skills-list li {
+  display: flex;
+  margin-top: 25px;
+ 
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.skills-list li img {
+  width: 250px;
+  border-radius: 50%;
+ cursor: pointer;
+ 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.skills-list li p {
+  margin-top: 22px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  
+  text-align: center;
+}
+.skills-list li p:hover{
+  background-color: #8EC5FC;
+background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+
+  padding: 8px;
+  cursor: pointer;
+}
+
+
+
+    span{
+      text-align: left;
+      margin-right: 850px;
+      font-weight: bold;
+      font-family: cursive;
+    }
+   
+  </style>
+</head>
+
+<body>
+  <nav>
+    
+    <ul>
+      <span>PORTFOLIO</span>
+      <li><a href="#" class="nav-link">Home</a></li>
+      <li class="dropdown">
+        <a href="#" class="nav-link">Links</a>
+        <div class="dropdown-content">
+          <a href="https://github.com/Likitha13-2001">GitHub</a>
+          <a href="https://www.linkedin.com/in/likithakuntala">LinkedIn</a>
+          <a href="https://www.instagram.com/">Instagram</a>
+        </div>
+      </li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="home">
+      <div class="home-text">
+        <h1>Hello Everyone <br>
+        I'm a Frontend Developer</h1>
+        <p>Now you view all my details is website.
+          Any issues you can contact me. <br>I'm beginer-level 
+          To Web development.
+
+        </p>
+        
+      </div>
+     
+      <img src="liki.jpeg" alt="Profile Image">
+    </section>
+    <section id="about">
+     
+      <p>Hello, I'm Likitha, a frontend engineer with a passion
+         for creating visually appealing and user-friendly web experiences. As a
+          beginner in the field, I am excited to learn and grow in
+           the ever-evolving world of frontend development.</p>
+           <p>Here u can see my Resume by Downloading It by below.</p>
+           <button><a href="Likitha kuntala (1).pdf">Resume</a></button>
+           <p></p>
+      
+      <h2>Education</h2>
+      <ul>
+        <li>
+          <h3>RAJIV GANDHI UNIVERSITY OF KNOWLEDGE AND TECHNOLOGIES,BASAR</h3>
+          <h3>Degree: Bachelor of Science in Computer Science</h3>
+          <h3>Year: 2020 - 2024</h3>
+        </li>
+        <li>
+          <h3>RAJIV GANDHI UNIVERSITY OF KNOWLEDGE AND TECHNOLOGIES,BASAR</h3>
+          <h3>MPC(PUC)</h3>
+          <h3>Year: 2018 - 2020</h3>
+        </li>
+        <li>
+          <h3>TSMS PEGADAPELLI</h3>
+          <h3>SECONDARY SCHOOL EDUCATION</h3>
+          <h3>Year: 2018</h3>
+        </li>
+      </ul>
+      </section>
+     <section id="skills">
+      <!-- <h2>Skills</h2> -->
+      <ul class="skills-list">
+        <li>
+          <a href="#"><img src="html.png" alt="HTML"></a>
+          <p>HTML</p>
+        </li>
+        <li>
+          <img src="css.jpeg" alt="CSS">
+          <p>CSS</p>
+        </li>
+        <li>
+          <img src="javascript.jpeg" alt="JavaScript">
+          <p>JavaScript</p>
+        </li>
+        <li>
+          <img src="python.jpeg" alt="Python">
+          <p>Python</p>
+        </li>
+        <li>
+          <a href="#"><img src="java.jpeg" alt=""></a>
+          <p>Java</p>
+        </li>
+        <li>
+          <img src="c.jpeg" alt="">
+          <p>C</p>
+        </li>
+        <li>
+         <a href="#"> <img src="php.jpeg" alt=""></a>
+          <p>PHP</p>
+        </li>
+      </ul>
+    </section>
+    
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact-info">
+        <p><strong>Name:</strong> Likitha</p>
+        <p><strong>Phone:</strong> 123456789</p>
+        <p><strong>Email:</strong> likithakuntala2@gmail.com</p>
+      </div>
+      <h2>Get in touch</h2>
+      <form id="contact-form">
+        <!-- Form fields here -->
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+    
+  </main>
+
+  <script>
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('main section');
+
+    navLinks.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetSection = document.querySelector(link.getAttribute('href'));
+        sections.forEach((section) => {
+          section.style.display = 'none';
+        });
+        targetSection.style.display = 'block';
+      });
+    });
+
+
+navLinks.forEach((link) => {
+  link.addEventListener('click', (e) => {
+    if (link.textContent === 'Home') {
+      location.href = location.origin + location.pathname; // Refresh the page if the link is for "Home"
+    }
+  });
+});
+
+  </script>
+</body>
+
+</html>
